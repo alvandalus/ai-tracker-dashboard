@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI.TRACKER.SYS - Terminal v1.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scan-line"></div>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">AI_TRACKER.EXE - [SYSTEM MONITOR v2.1]</div>
+        </div>
+        
+        <div class="terminal-body">
+            <div class="boot-sequence" id="bootSequence">
+                <div class="boot-line">INITIALIZING AI TRACKER SYSTEM...</div>
+                <div class="boot-line">LOADING NEURAL NETWORK DATABASE...</div>
+                <div class="boot-line">ESTABLISHING CONNECTION TO AI PROVIDERS...</div>
+                <div class="boot-line">READY.</div>
+                <div class="boot-line">_</div>
+            </div>
+
+            <header class="terminal-welcome">
+                <pre class="ascii-art">
+    ___    ____   ______                __            
+   /   |  /  _/  /_  __/________ ______/ /_____  _____
+  / /| |  / /     / / / ___/ __ `/ ___/ //_/ _ \/ ___/
+ / ___ |_/ /     / / / /  / /_/ / /__/ ,< /  __/ /    
+/_/  |_/___/    /_/ /_/   \__,_/\___/_/|_|\___/_/     
+                                                       
+        </pre>
+                <div class="system-info">
+                    <span class="prompt">></span> SYSTEM STATUS: <span class="status-online">ONLINE</span><br>
+                    <span class="prompt">></span> MONITORING: <span class="highlight">OpenAI | Anthropic | Google | Meta | Mistral</span><br>
+                    <span class="prompt">></span> LAST UPDATE: <span id="lastUpdate" class="timestamp">--:--:--</span>
+                </div>
+            </header>
+
+            <nav class="command-menu">
+                <div class="menu-prompt">
+                    <span class="prompt">root@ai-tracker:~$</span> SELECT COMMAND:
+                </div>
+                <div class="command-buttons">
+                    <button class="cmd-button active" onclick="showTab('pricing')" data-cmd="ls -pricing">
+                        <span class="cmd-icon">[1]</span> PRICING.DAT
+                    </button>
+                    <button class="cmd-button" onclick="showTab('news')" data-cmd="cat -news">
+                        <span class="cmd-icon">[2]</span> NEWS.LOG
+                    </button>
+                    <button class="cmd-button" onclick="showTab('models')" data-cmd="info -models">
+                        <span class="cmd-icon">[3]</span> MODELS.SYS
+                    </button>
+                    <button class="cmd-button" onclick="showTab('compare')" data-cmd="diff -compare">
+                        <span class="cmd-icon">[4]</span> COMPARE.EXE
+                    </button>
+                </div>
+            </nav>
+
+            <!-- TAB: PRECIOS -->
+            <div id="pricing" class="tab-content active">
+                <div class="section-header">
+                    <pre class="section-title">
+╔═══════════════════════════════════════════════════╗
+║  TOKEN PRICING DATABASE - REAL-TIME MONITORING   ║
+╚═══════════════════════════════════════════════════╝</pre>
+                </div>
+                <div class="terminal-filters">
+                    <div class="filter-group">
+                        <span class="prompt">></span> 
+                        <input type="text" id="searchModels" placeholder="SEARCH MODEL..." 
+                               onkeyup="filterModels()" class="terminal-input">
+                    </div>
+                    <div class="filter-group">
+                        <span class="prompt">></span> 
+                        <select id="providerFilter" onchange="filterModels()" class="terminal-select">
+                            <option value="all">ALL_PROVIDERS</option>
+                            <option value="openai">OPENAI</option>
+                            <option value="anthropic">ANTHROPIC</option>
+                            <option value="google">GOOGLE</option>
+                            <option value="meta">META</option>
+                            <option value="mistral">MISTRAL</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="pricingTable" class="data-grid">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+
+            <!-- TAB: NOTICIAS -->
+            <div id="news" class="tab-content">
+                <div class="section-header">
+                    <pre class="section-title">
+╔═══════════════════════════════════════════════════╗
+║  SYSTEM NEWS LOG - LATEST AI UPDATES             ║
+╚═══════════════════════════════════════════════════╝</pre>
+                </div>
+                <div class="terminal-filters news-filter-bar">
+                    <span class="prompt">></span> FILTER BY SOURCE:
+                    <button class="filter-tag active" onclick="filterNews('all')">[ALL]</button>
+                    <button class="filter-tag" onclick="filterNews('openai')">[OPENAI]</button>
+                    <button class="filter-tag" onclick="filterNews('anthropic')">[ANTHROPIC]</button>
+                    <button class="filter-tag" onclick="filterNews('google')">[GOOGLE]</button>
+                    <button class="filter-tag" onclick="filterNews('meta')">[META]</button>
+                </div>
+                <div id="newsFeed" class="log-feed">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+
+            <!-- TAB: MODELOS -->
+            <div id="models" class="tab-content">
+                <div class="section-header">
+                    <pre class="section-title">
+╔═══════════════════════════════════════════════════╗
+║  MODEL SPECIFICATIONS DATABASE                    ║
+╚═══════════════════════════════════════════════════╝</pre>
+                </div>
+                <div id="modelsGrid" class="data-grid">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+
+            <!-- TAB: COMPARAR -->
+            <div id="compare" class="tab-content">
+                <div class="section-header">
+                    <pre class="section-title">
+╔═══════════════════════════════════════════════════╗
+║  MODEL COMPARISON TOOL - DIFF ANALYZER            ║
+╚═══════════════════════════════════════════════════╝</pre>
+                </div>
+                <div class="compare-interface">
+                    <div class="compare-inputs">
+                        <div class="input-group">
+                            <span class="prompt">MODEL_A></span>
+                            <select id="model1" onchange="updateComparison()" class="terminal-select">
+                                <option value="">SELECT MODEL...</option>
+                            </select>
+                        </div>
+                        <div class="vs-divider">
+                            <span class="vs-text">VS</span>
+                        </div>
+                        <div class="input-group">
+                            <span class="prompt">MODEL_B></span>
+                            <select id="model2" onchange="updateComparison()" class="terminal-select">
+                                <option value="">SELECT MODEL...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="comparisonResult" class="diff-output">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <footer class="terminal-footer">
+                <div class="footer-line">
+                    <span class="prompt">></span> STATUS: OPEN_SOURCE PROJECT | NO COSTS | AUTO_UPDATED
+                </div>
+                <div class="footer-line">
+                    <span class="prompt">></span> POWERED BY: GitHub Actions + Public APIs
+                </div>
+                <div class="footer-line">
+                    <span class="prompt">></span> [ESC] TO EXIT | [F1] FOR HELP | [F5] TO REFRESH
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
