@@ -16,7 +16,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-04-09',
-            description: 'Modelo más capaz de OpenAI con ventana de contexto de 128K'
+            description: 'Motor de generación de texto de alto rendimiento con ventana de 128K tokens; ideal para tareas generales con latencia reducida y soporte para visión, llamadas a funciones, modo JSON y streaming'
         },
         {
             id: 'gpt-4o',
@@ -33,7 +33,7 @@ const aiModelsData = {
                 audio: true
             },
             releaseDate: '2024-05-13',
-            description: 'GPT-4 optimizado para velocidad y multimodalidad'
+            description: 'Modelo multimodal de nueva generación que procesa texto, imágenes y audio en tiempo real; optimizado para velocidad y costes con ventana de contexto de 128K; incluye vision, audio, llamadas a funciones, modo JSON y streaming'
         },
         {
             id: 'gpt-4o-mini',
@@ -49,7 +49,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-07-18',
-            description: 'Versión eficiente y económica de GPT-4o'
+            description: 'Versión eficiente y económica de GPT‑4o que ofrece capacidades multimodales a un coste reducido; ideal para prototipos y tareas básicas con alta velocidad'
         },
         {
             id: 'gpt-3.5-turbo',
@@ -65,7 +65,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2023-03-01',
-            description: 'Modelo rápido y económico para tareas generales'
+            description: 'Modelo rápido y económico diseñado para tareas de completado de textos, chatbots y análisis; admite llamadas a funciones, modo JSON y streaming con una ventana de contexto de 16K tokens'
         },
         {
             id: 'o1-preview',
@@ -82,7 +82,7 @@ const aiModelsData = {
                 reasoning: true
             },
             releaseDate: '2024-09-12',
-            description: 'Modelo de razonamiento avanzado para problemas complejos'
+            description: 'Primer modelo de la serie O1 enfocado en razonamiento profundo y planificación multi‑paso; destaca en resolución de problemas matemáticos y científicos complejos'
         },
         {
             id: 'o1-mini',
@@ -99,7 +99,7 @@ const aiModelsData = {
                 reasoning: true
             },
             releaseDate: '2024-09-12',
-            description: 'Versión eficiente del modelo de razonamiento O1'
+            description: 'Versión eficiente del modelo de razonamiento O1, pensada para tareas avanzadas de lógica y planificación a menor coste'
         },
 
         // Anthropic Claude
@@ -117,7 +117,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2025-01-15',
-            description: 'Modelo más potente de Anthropic para tareas complejas'
+            description: 'Modelo más potente de Anthropic para tareas creativas, análisis profundo y procesamiento de grandes volúmenes de documentos; mantiene ventana de 200K tokens y habilita visión, llamadas a funciones y modo JSON'
         },
         {
             id: 'claude-sonnet-4.5',
@@ -134,7 +134,7 @@ const aiModelsData = {
                 computerUse: true
             },
             releaseDate: '2025-09-29',
-            description: 'El más inteligente de Claude con computer use'
+            description: 'Versión más inteligente de Claude Sonnet que mejora significativamente el rendimiento en coding, reasoning y análisis; admite Computer Use para interactuar con interfaces y ofrece visión, llamadas a funciones, modo JSON y streaming'
         },
         {
             id: 'claude-sonnet-4',
@@ -150,7 +150,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-11-22',
-            description: 'Balance entre inteligencia y velocidad'
+            description: 'Modelo equilibrado entre inteligencia y velocidad que ofrece buenas capacidades multimodales con visión, llamadas a funciones, modo JSON y streaming'
         },
         {
             id: 'claude-haiku-4',
@@ -166,7 +166,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-11-04',
-            description: 'Modelo rápido y eficiente para tareas ligeras'
+            description: 'Modelo ligero y rápido orientado a tareas sencillas; ideal para contextos con 200K tokens y uso eficiente de recursos'
         },
 
         // Google Gemini
@@ -186,7 +186,7 @@ const aiModelsData = {
                 multimodal: true
             },
             releaseDate: '2024-12-11',
-            description: 'Modelo multimodal ultrarrápido con 1M de contexto'
+            description: 'Modelo ultrarrápido con contexto de 1M tokens y latencia baja, orientado a flujos de trabajo en tiempo real; es multimodal y admite visión, audio y llamadas a funciones; perfecto para tareas de streaming y procesamiento a escala'
         },
         {
             id: 'gemini-1.5-pro',
@@ -204,7 +204,7 @@ const aiModelsData = {
                 video: true
             },
             releaseDate: '2024-05-14',
-            description: 'Modelo premium con ventana de 2M tokens'
+            description: 'Modelo premium con ventana de 2M tokens; ofrece potencia de procesamiento superior para grandes documentos y código completo; admite visión, audio y video; ideal para proyectos de análisis de datos extensos y generación de contenido multimedia'
         },
         {
             id: 'gemini-1.5-flash',
@@ -221,7 +221,7 @@ const aiModelsData = {
                 audio: true
             },
             releaseDate: '2024-05-14',
-            description: 'Versión rápida y económica con 1M de contexto'
+            description: 'Versión rápida y económica de Gemini 1.5 con 1M de contexto; adecuada para tareas de baja latencia y eficiencia energética; soporte multimodal con visión, audio y streaming'
         },
 
         // Meta Llama
@@ -239,7 +239,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-12-06',
-            description: 'Modelo open source de alto rendimiento'
+            description: 'Modelo open source de alto rendimiento con 70 mil millones de parámetros; ofrece rendimiento comparable a modelos propietarios más grandes con menor coste computacional; orientado a chat multilingüe, asistencia de programación y generación de datos sintéticos'
         },
         {
             id: 'llama-3.1-405b',
@@ -255,7 +255,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-07-23',
-            description: 'Modelo más grande de Meta, open source'
+            description: 'Modelo open source de 405 mil millones de parámetros; proporciona máxima potencia de procesamiento entre las versiones de Llama, ideal para tareas complejas que requieren mayor capacidad computacional'
         },
         {
             id: 'llama-3.2-90b-vision',
@@ -271,7 +271,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-09-25',
-            description: 'Modelo multimodal con capacidades de visión'
+            description: 'Modelo multimodal de Meta con 90 mil millones de parámetros que combina texto e imagen para aplicaciones de visión; perfecto para generación y análisis de contenido visual con 128K de contexto'
         },
 
         // Mistral
@@ -289,7 +289,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-07-24',
-            description: 'Modelo flagship de Mistral AI'
+            description: 'Modelo insignia de Mistral AI con 128K de contexto; capaz de realizar tareas avanzadas de lenguaje y análisis con un equilibrio entre precisión, velocidad y coste'
         },
         {
             id: 'mistral-small',
@@ -305,7 +305,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-09-18',
-            description: 'Modelo económico para tareas básicas'
+            description: 'Modelo económico de Mistral diseñado para tareas básicas y prototipos rápidos; ofrece buen rendimiento con contexto de 32K tokens a un coste muy bajo'
         },
         {
             id: 'pixtral-large',
@@ -321,7 +321,7 @@ const aiModelsData = {
                 streaming: true
             },
             releaseDate: '2024-11-13',
-            description: 'Primer modelo multimodal de Mistral'
+            description: 'Primer modelo multimodal de Mistral que integra visión y texto; ideal para aplicaciones que requieren comprensión de imágenes y generación de texto; con 128K de contexto y soporte para llamadas a funciones y streaming'
         }
     ],
 

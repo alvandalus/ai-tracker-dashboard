@@ -206,6 +206,9 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     text-align: left;
+    /* Ensure pseudo‑element hover effect stays within the button */
+    position: relative;
+    overflow: hidden;
 }
 
 .cmd-button::before {
